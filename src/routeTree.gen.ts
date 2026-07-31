@@ -9,89 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TheArchitectRouteImport } from './routes/the-architect'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as PersonalDevelopmentFrameworkRouteImport } from './routes/personal-development-framework'
-import { Route as OrganizationalDevelopmentRouteImport } from './routes/organizational-development'
-import { Route as NewsletterRouteImport } from './routes/newsletter'
-import { Route as MediaRouteImport } from './routes/media'
-import { Route as McpRouteImport } from './routes/mcp'
-import { Route as ExecutiveCoachingRouteImport } from './routes/executive-coaching'
-import { Route as ConnectRouteImport } from './routes/connect'
-import { Route as ClarityosRouteImport } from './routes/clarityos'
-import { Route as BookASessionRouteImport } from './routes/book-a-session'
-import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as InsightsIndexRouteImport } from './routes/insights.index'
-import { Route as FrameworksIndexRouteImport } from './routes/frameworks.index'
-import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
-import { Route as FrameworksSlugRouteImport } from './routes/frameworks.$slug'
-import { Route as BookSlugRouteImport } from './routes/book.$slug'
-import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as BookASessionRouteImport } from './routes/book-a-session'
+import { Route as ClarityosRouteImport } from './routes/clarityos'
+import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as ExecutiveCoachingRouteImport } from './routes/executive-coaching'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as NewsletterRouteImport } from './routes/newsletter'
+import { Route as OrganizationalDevelopmentRouteImport } from './routes/organizational-development'
+import { Route as PersonalDevelopmentFrameworkRouteImport } from './routes/personal-development-framework'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TheArchitectRouteImport } from './routes/the-architect'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as BookSlugRouteImport } from './routes/book.$slug'
+import { Route as FrameworksIndexRouteImport } from './routes/frameworks.index'
+import { Route as FrameworksSlugRouteImport } from './routes/frameworks.$slug'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
+import { Route as FrameworksSlugLeadRouteImport } from './routes/frameworks.$slug/lead'
 
-const TheArchitectRoute = TheArchitectRouteImport.update({
-  id: '/the-architect',
-  path: '/the-architect',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PersonalDevelopmentFrameworkRoute =
-  PersonalDevelopmentFrameworkRouteImport.update({
-    id: '/personal-development-framework',
-    path: '/personal-development-framework',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const OrganizationalDevelopmentRoute =
-  OrganizationalDevelopmentRouteImport.update({
-    id: '/organizational-development',
-    path: '/organizational-development',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const NewsletterRoute = NewsletterRouteImport.update({
-  id: '/newsletter',
-  path: '/newsletter',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MediaRoute = MediaRouteImport.update({
-  id: '/media',
-  path: '/media',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const McpRoute = McpRouteImport.update({
-  id: '/mcp',
-  path: '/mcp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExecutiveCoachingRoute = ExecutiveCoachingRouteImport.update({
-  id: '/executive-coaching',
-  path: '/executive-coaching',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConnectRoute = ConnectRouteImport.update({
-  id: '/connect',
-  path: '/connect',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClarityosRoute = ClarityosRouteImport.update({
-  id: '/clarityos',
-  path: '/clarityos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookASessionRoute = BookASessionRouteImport.update({
-  id: '/book-a-session',
-  path: '/book-a-session',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -99,24 +43,88 @@ const BookRoute = BookRouteImport.update({
   path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BookASessionRoute = BookASessionRouteImport.update({
+  id: '/book-a-session',
+  path: '/book-a-session',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InsightsIndexRoute = InsightsIndexRouteImport.update({
-  id: '/insights/',
-  path: '/insights/',
+const ClarityosRoute = ClarityosRouteImport.update({
+  id: '/clarityos',
+  path: '/clarityos',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveCoachingRoute = ExecutiveCoachingRouteImport.update({
+  id: '/executive-coaching',
+  path: '/executive-coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterRoute = NewsletterRouteImport.update({
+  id: '/newsletter',
+  path: '/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizationalDevelopmentRoute =
+  OrganizationalDevelopmentRouteImport.update({
+    id: '/organizational-development',
+    path: '/organizational-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PersonalDevelopmentFrameworkRoute =
+  PersonalDevelopmentFrameworkRouteImport.update({
+    id: '/personal-development-framework',
+    path: '/personal-development-framework',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheArchitectRoute = TheArchitectRouteImport.update({
+  id: '/the-architect',
+  path: '/the-architect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char91DotmcpChar93ListToolsRoute =
+  Char91DotmcpChar93ListToolsRouteImport.update({
+    id: '/.mcp/list-tools',
+    path: '/.mcp/list-tools',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BookSlugRoute = BookSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BookRoute,
 } as any)
 const FrameworksIndexRoute = FrameworksIndexRouteImport.update({
   id: '/frameworks/',
   path: '/frameworks/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsSlugRoute = InsightsSlugRouteImport.update({
-  id: '/insights/$slug',
-  path: '/insights/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FrameworksSlugRoute = FrameworksSlugRouteImport.update({
@@ -124,29 +132,27 @@ const FrameworksSlugRoute = FrameworksSlugRouteImport.update({
   path: '/frameworks/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BookSlugRoute = BookSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BookRoute,
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const Char91DotwellKnownChar93OauthProtectedResourceRoute =
-  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
-    id: '/.well-known/oauth-protected-resource',
-    path: '/.well-known/oauth-protected-resource',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Char91DotmcpChar93ListToolsRoute =
-  Char91DotmcpChar93ListToolsRouteImport.update({
-    id: '/.mcp/list-tools',
-    path: '/.mcp/list-tools',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
     path: '/.mcp/invoke-tool/$tool',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FrameworksSlugLeadRoute = FrameworksSlugLeadRouteImport.update({
+  id: '/lead',
+  path: '/lead',
+  getParentRoute: () => FrameworksSlugRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -166,11 +172,12 @@ export interface FileRoutesByFullPath {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book/$slug': typeof BookSlugRoute
-  '/frameworks/$slug': typeof FrameworksSlugRoute
+  '/frameworks/$slug': typeof FrameworksSlugRouteWithChildren
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/frameworks/$slug/lead': typeof FrameworksSlugLeadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -190,11 +197,12 @@ export interface FileRoutesByTo {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book/$slug': typeof BookSlugRoute
-  '/frameworks/$slug': typeof FrameworksSlugRoute
+  '/frameworks/$slug': typeof FrameworksSlugRouteWithChildren
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks': typeof FrameworksIndexRoute
   '/insights': typeof InsightsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/frameworks/$slug/lead': typeof FrameworksSlugLeadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -215,11 +223,12 @@ export interface FileRoutesById {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book/$slug': typeof BookSlugRoute
-  '/frameworks/$slug': typeof FrameworksSlugRoute
+  '/frameworks/$slug': typeof FrameworksSlugRouteWithChildren
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/frameworks/$slug/lead': typeof FrameworksSlugLeadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -246,6 +255,7 @@ export interface FileRouteTypes {
     | '/frameworks/'
     | '/insights/'
     | '/.mcp/invoke-tool/$tool'
+    | '/frameworks/$slug/lead'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -270,6 +280,7 @@ export interface FileRouteTypes {
     | '/frameworks'
     | '/insights'
     | '/.mcp/invoke-tool/$tool'
+    | '/frameworks/$slug/lead'
   id:
     | '__root__'
     | '/'
@@ -294,6 +305,7 @@ export interface FileRouteTypes {
     | '/frameworks/'
     | '/insights/'
     | '/.mcp/invoke-tool/$tool'
+    | '/frameworks/$slug/lead'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -313,7 +325,7 @@ export interface RootRouteChildren {
   TheArchitectRoute: typeof TheArchitectRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
-  FrameworksSlugRoute: typeof FrameworksSlugRoute
+  FrameworksSlugRoute: typeof FrameworksSlugRouteWithChildren
   InsightsSlugRoute: typeof InsightsSlugRoute
   FrameworksIndexRoute: typeof FrameworksIndexRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
@@ -322,88 +334,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/the-architect': {
-      id: '/the-architect'
-      path: '/the-architect'
-      fullPath: '/the-architect'
-      preLoaderRoute: typeof TheArchitectRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/personal-development-framework': {
-      id: '/personal-development-framework'
-      path: '/personal-development-framework'
-      fullPath: '/personal-development-framework'
-      preLoaderRoute: typeof PersonalDevelopmentFrameworkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/organizational-development': {
-      id: '/organizational-development'
-      path: '/organizational-development'
-      fullPath: '/organizational-development'
-      preLoaderRoute: typeof OrganizationalDevelopmentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/newsletter': {
-      id: '/newsletter'
-      path: '/newsletter'
-      fullPath: '/newsletter'
-      preLoaderRoute: typeof NewsletterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/media': {
-      id: '/media'
-      path: '/media'
-      fullPath: '/media'
-      preLoaderRoute: typeof MediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp': {
-      id: '/mcp'
-      path: '/mcp'
-      fullPath: '/mcp'
-      preLoaderRoute: typeof McpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/executive-coaching': {
-      id: '/executive-coaching'
-      path: '/executive-coaching'
-      fullPath: '/executive-coaching'
-      preLoaderRoute: typeof ExecutiveCoachingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/connect': {
-      id: '/connect'
-      path: '/connect'
-      fullPath: '/connect'
-      preLoaderRoute: typeof ConnectRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/clarityos': {
-      id: '/clarityos'
-      path: '/clarityos'
-      fullPath: '/clarityos'
-      preLoaderRoute: typeof ClarityosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book-a-session': {
-      id: '/book-a-session'
-      path: '/book-a-session'
-      fullPath: '/book-a-session'
-      preLoaderRoute: typeof BookASessionRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -413,53 +348,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/book-a-session': {
+      id: '/book-a-session'
+      path: '/book-a-session'
+      fullPath: '/book-a-session'
+      preLoaderRoute: typeof BookASessionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insights/': {
-      id: '/insights/'
-      path: '/insights'
-      fullPath: '/insights/'
-      preLoaderRoute: typeof InsightsIndexRouteImport
+    '/clarityos': {
+      id: '/clarityos'
+      path: '/clarityos'
+      fullPath: '/clarityos'
+      preLoaderRoute: typeof ClarityosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/frameworks/': {
-      id: '/frameworks/'
-      path: '/frameworks'
-      fullPath: '/frameworks/'
-      preLoaderRoute: typeof FrameworksIndexRouteImport
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insights/$slug': {
-      id: '/insights/$slug'
-      path: '/insights/$slug'
-      fullPath: '/insights/$slug'
-      preLoaderRoute: typeof InsightsSlugRouteImport
+    '/executive-coaching': {
+      id: '/executive-coaching'
+      path: '/executive-coaching'
+      fullPath: '/executive-coaching'
+      preLoaderRoute: typeof ExecutiveCoachingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/frameworks/$slug': {
-      id: '/frameworks/$slug'
-      path: '/frameworks/$slug'
-      fullPath: '/frameworks/$slug'
-      preLoaderRoute: typeof FrameworksSlugRouteImport
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/book/$slug': {
-      id: '/book/$slug'
-      path: '/$slug'
-      fullPath: '/book/$slug'
-      preLoaderRoute: typeof BookSlugRouteImport
-      parentRoute: typeof BookRoute
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/.well-known/oauth-protected-resource': {
-      id: '/.well-known/oauth-protected-resource'
-      path: '/.well-known/oauth-protected-resource'
-      fullPath: '/.well-known/oauth-protected-resource'
-      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+    '/newsletter': {
+      id: '/newsletter'
+      path: '/newsletter'
+      fullPath: '/newsletter'
+      preLoaderRoute: typeof NewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organizational-development': {
+      id: '/organizational-development'
+      path: '/organizational-development'
+      fullPath: '/organizational-development'
+      preLoaderRoute: typeof OrganizationalDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personal-development-framework': {
+      id: '/personal-development-framework'
+      path: '/personal-development-framework'
+      fullPath: '/personal-development-framework'
+      preLoaderRoute: typeof PersonalDevelopmentFrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-architect': {
+      id: '/the-architect'
+      path: '/the-architect'
+      fullPath: '/the-architect'
+      preLoaderRoute: typeof TheArchitectRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.mcp/list-tools': {
@@ -469,12 +439,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/$slug': {
+      id: '/book/$slug'
+      path: '/$slug'
+      fullPath: '/book/$slug'
+      preLoaderRoute: typeof BookSlugRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/frameworks/': {
+      id: '/frameworks/'
+      path: '/frameworks'
+      fullPath: '/frameworks/'
+      preLoaderRoute: typeof FrameworksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/frameworks/$slug': {
+      id: '/frameworks/$slug'
+      path: '/frameworks/$slug'
+      fullPath: '/frameworks/$slug'
+      preLoaderRoute: typeof FrameworksSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/$slug': {
+      id: '/insights/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
       fullPath: '/.mcp/invoke-tool/$tool'
       preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/frameworks/$slug/lead': {
+      id: '/frameworks/$slug/lead'
+      path: '/lead'
+      fullPath: '/frameworks/$slug/lead'
+      preLoaderRoute: typeof FrameworksSlugLeadRouteImport
+      parentRoute: typeof FrameworksSlugRoute
     }
   }
 }
@@ -488,6 +507,18 @@ const BookRouteChildren: BookRouteChildren = {
 }
 
 const BookRouteWithChildren = BookRoute._addFileChildren(BookRouteChildren)
+
+interface FrameworksSlugRouteChildren {
+  FrameworksSlugLeadRoute: typeof FrameworksSlugLeadRoute
+}
+
+const FrameworksSlugRouteChildren: FrameworksSlugRouteChildren = {
+  FrameworksSlugLeadRoute: FrameworksSlugLeadRoute,
+}
+
+const FrameworksSlugRouteWithChildren = FrameworksSlugRoute._addFileChildren(
+  FrameworksSlugRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -507,7 +538,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
-  FrameworksSlugRoute: FrameworksSlugRoute,
+  FrameworksSlugRoute: FrameworksSlugRouteWithChildren,
   InsightsSlugRoute: InsightsSlugRoute,
   FrameworksIndexRoute: FrameworksIndexRoute,
   InsightsIndexRoute: InsightsIndexRoute,

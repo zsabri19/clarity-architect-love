@@ -93,31 +93,63 @@ export const LOGOS_INSTITUTIONS = [
 ];
 
 export const LOGOS_VENTURES = [
-  { name: "Global Markets Technologies", alt: "Global Markets Technologies logo", src: logoGmt.url },
+  {
+    name: "Global Markets Technologies",
+    alt: "Global Markets Technologies logo",
+    src: logoGmt.url,
+  },
   { name: "SuperJet", alt: "SuperJet aviation services logo", src: logoSuperjet.url },
-  { name: "NASTP", alt: "NASTP National Aerospace Science and Technology Park logo", src: logoNastp.url },
+  {
+    name: "NASTP",
+    alt: "NASTP National Aerospace Science and Technology Park logo",
+    src: logoNastp.url,
+  },
   { name: "Da1ilmverse", alt: "Da1ilmverse learning platform logo", src: logoDa1ilmverse.url },
   { name: "Jabr", alt: "Jabr consulting logo", src: logoJabr.url },
   { name: "Sanad Services Center", alt: "Sanad Services Center logo", src: logoSanad.url },
   { name: "SCMDojo", alt: "SCMDojo supply chain academy logo", src: logoScmdojo.url },
   { name: "ROSP", alt: "ROSP professional development logo", src: logoRosp.url },
   { name: "Kuwait Cricket", alt: "Kuwait Cricket association logo", src: logoKuwaitCricket.url },
-  { name: "Boost Training & Consulting", alt: "Boost Training and Consulting logo", src: logoBoost.url },
+  {
+    name: "Boost Training & Consulting",
+    alt: "Boost Training and Consulting logo",
+    src: logoBoost.url,
+  },
 ];
 
 export const FIELD_PHOTOS = [
-  { src: talkLumsDecode.url, caption: "LUMS Lahore — Decode Conference keynote, ClarityOS unveil", tag: "Keynote" },
+  {
+    src: talkLumsDecode.url,
+    caption: "LUMS Lahore — Decode Conference keynote, ClarityOS unveil",
+    tag: "Keynote",
+  },
   { src: talkStage.url, caption: "The Architecture of Change — mainstage keynote", tag: "Keynote" },
   { src: talkIgnite.url, caption: "Ignite Fireside Chat — founder conversation", tag: "Keynote" },
-  { src: fieldMsiMe.url, caption: "Motorola Solutions — Middle East partner enablement", tag: "Enterprise" },
-  { src: fieldMsiEvent.url, caption: "Motorola Solutions — Dubai partner event", tag: "Enterprise" },
+  {
+    src: fieldMsiMe.url,
+    caption: "Motorola Solutions — Middle East partner enablement",
+    tag: "Enterprise",
+  },
+  {
+    src: fieldMsiEvent.url,
+    caption: "Motorola Solutions — Dubai partner event",
+    tag: "Enterprise",
+  },
   { src: fieldDubaiPanel.url, caption: "Procurement Leaders Panel — Dubai", tag: "Panel" },
-  { src: fieldKsaDefence1.url, caption: "KSA defence procurement workshop — cohort", tag: "Workshop" },
+  {
+    src: fieldKsaDefence1.url,
+    caption: "KSA defence procurement workshop — cohort",
+    tag: "Workshop",
+  },
   { src: fieldKsaDefence2.url, caption: "KSA defence — cohort certification", tag: "Workshop" },
   { src: fieldKsaPartner.url, caption: "KSA — partner enablement session", tag: "Enterprise" },
   { src: fieldDohaAi.url, caption: "Doha — AI leadership workshop", tag: "Workshop" },
   { src: fieldDohaAi2.url, caption: "Doha — AI working session", tag: "Workshop" },
-  { src: fieldOshFounders.url, caption: "Oman — What You Can't Predict, founders session", tag: "Workshop" },
+  {
+    src: fieldOshFounders.url,
+    caption: "Oman — What You Can't Predict, founders session",
+    tag: "Workshop",
+  },
   { src: talkOsh04.url, caption: "OSH — Hard Questions workshop", tag: "Workshop" },
   { src: talkOsh18.url, caption: "OSH — the Inside session", tag: "Workshop" },
   { src: talkOsh21.url, caption: "OSH — What You Can't Predict", tag: "Workshop" },
@@ -130,9 +162,21 @@ export const TEAM_PHOTOS = [
 ];
 
 export const RECOGNITION = [
-  { src: recHuaweiMentor.url, title: "Huawei — Best Mentor Award", note: "Recognised for mentorship across Huawei ME." },
-  { src: recHuaweiFarewell.url, title: "Huawei Bahrain — farewell tribute", note: "Team recognition from Huawei Bahrain." },
-  { src: recKuwaitSummit.url, title: "Kuwait Procurement Summit", note: "Featured speaker and industry recognition." },
+  {
+    src: recHuaweiMentor.url,
+    title: "Huawei — Best Mentor Award",
+    note: "Recognised for mentorship across Huawei ME.",
+  },
+  {
+    src: recHuaweiFarewell.url,
+    title: "Huawei Bahrain — farewell tribute",
+    note: "Team recognition from Huawei Bahrain.",
+  },
+  {
+    src: recKuwaitSummit.url,
+    title: "Kuwait Procurement Summit",
+    note: "Featured speaker and industry recognition.",
+  },
 ];
 
 export const CERT_AICERTS_PDF = certAicerts.url;
@@ -169,7 +213,6 @@ export const CERTIFICATIONS = [
   },
 ];
 
-
 export const ARCHIVE_CRICKET = [
   {
     src: archiveCricketMag.url,
@@ -197,28 +240,32 @@ export const QUOTE_CARDS: QuoteCard[] = [
   {
     slug: "crisis",
     src: quoteCrisis.url,
-    quote: "Crisis does not introduce disorder. Crisis compresses time and exposes what was already ungoverned.",
+    quote:
+      "Crisis does not introduce disorder. Crisis compresses time and exposes what was already ungoverned.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "crisis-as-audit",
   },
   {
     slug: "leadership",
     src: quoteLeadership.url,
-    quote: "Leadership isn't measured by numbers alone. True leaders are architects of change, evolving their approach while others chase metrics.",
+    quote:
+      "Leadership isn't measured by numbers alone. True leaders are architects of change, evolving their approach while others chase metrics.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "character-compass",
   },
   {
     slug: "brain",
     src: quoteBrain.url,
-    quote: "Under uncertainty, the brain activates threat response. Silos are not political — silos feel safe when clarity is missing.",
+    quote:
+      "Under uncertainty, the brain activates threat response. Silos are not political — silos feel safe when clarity is missing.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "8c-crisis-to-clarity",
   },
   {
     slug: "act",
     src: quoteAct.url,
-    quote: "Theory becomes reality only when we dare to act on it. Every breakthrough starts with someone who believed the impossible was just waiting to be proven.",
+    quote:
+      "Theory becomes reality only when we dare to act on it. Every breakthrough starts with someone who believed the impossible was just waiting to be proven.",
     attribution: "Zeeshan Sabri",
   },
   {
@@ -248,7 +295,8 @@ export const TESTIMONIALS = [
     attribution: "Director, NCMS Leadership Programme",
   },
   {
-    quote: "The most impactful session in the entire programme. Real, honest, and immediately applicable.",
+    quote:
+      "The most impactful session in the entire programme. Real, honest, and immediately applicable.",
     attribution: "Programme Participant, NCMS",
   },
 ];
@@ -295,6 +343,7 @@ export type Framework = {
   parameters: string[];
   impact: string;
   leadMagnet: string;
+  downloadUrl: string;
 };
 
 export const FRAMEWORKS: Framework[] = [
@@ -306,19 +355,123 @@ export const FRAMEWORKS: Framework[] = [
     summary:
       "A recursive eight-dimension protocol for moving an organisation from crisis to durable operating clarity.",
     parameters: [
-      "Clarity", "Conditions", "Control", "Capability",
-      "Calibration", "Correction", "Continuity", "Coaching",
+      "Clarity",
+      "Conditions",
+      "Control",
+      "Capability",
+      "Calibration",
+      "Correction",
+      "Continuity",
+      "Coaching",
     ],
     impact: "Reduces decision drag; installs a shared operating rhythm.",
     leadMagnet: "8C Crisis-to-Clarity Field Guide (PDF)",
+    downloadUrl: "/frameworks/8c-crisis-to-clarity/lead",
   },
   {
     slug: "exile-resilience",
     number: 2,
     title: "Exile Resilience Framework",
     eyebrow: "Resilience & Crisis Leadership",
-    summary: "How leaders forge continuity when the ground itself is being pulled out from under them.",
-    parameters: ["Displacement audit", "Identity anchors", "Continuity contracts", "Return architecture"],
+    summary:
+      "How leaders forge continuity when the ground itself is being pulled out from under them.",
+    parameters: [
+      "Displacement audit",
+      "Identity anchors",
+      "Continuity contracts",
+      "Return architecture",
+    ],
+    impact: "60% faster crisis response across validated engagements.",
+    leadMagnet: "Exile Resilience Framework (PDF)",
+    downloadUrl: "/frameworks/exile-resilience/lead",
+  },
+  {
+    slug: "cultural-ecosystem-mapping",
+    number: 3,
+    title: "Cultural Ecosystem Mapping",
+    eyebrow: "Cross-Cultural Leadership",
+    summary:
+      "Diagnose the invisible cultural operating system beneath a GCC organisation before designing change.",
+    parameters: ["Power topology", "Language codes", "Trust flows", "Silent constraints"],
+    impact: "70% improved cross-cultural project success.",
+    leadMagnet: "Cultural Ecosystem Mapping Canvas",
+    downloadUrl: "/frameworks/cultural-ecosystem-mapping/lead",
+  },
+  {
+    slug: "identity-preservation",
+    number: 4,
+    title: "Identity Preservation Under Change",
+    eyebrow: "Leadership Sustainability",
+    summary: "Keep the core intact while everything on the surface is being rebuilt.",
+    parameters: ["Non-negotiables", "Ritual continuity", "Narrative custody", "Successor logic"],
+    impact: "Prevents organisational identity collapse during transformation.",
+    leadMagnet: "Identity Preservation Checklist",
+    downloadUrl: "/frameworks/identity-preservation/lead",
+  },
+  {
+    slug: "constraint-based-innovation",
+    number: 5,
+    title: "Constraint-Based Innovation",
+    eyebrow: "Transformation Methodology",
+    summary: "Use scarcity, sanctions, and structural limits as design fuel rather than blockers.",
+    parameters: ["Constraint inventory", "Design pivots", "Substitution mapping", "Yield metrics"],
+    impact: "80% innovation output enhanced under constraint conditions.",
+    leadMagnet: "Constraint-Based Innovation Playbook",
+    downloadUrl: "/frameworks/constraint-based-innovation/lead",
+  },
+  {
+    slug: "governance-as-accelerator",
+    number: 6,
+    title: "Governance as Accelerator",
+    eyebrow: "Governance & Procurement",
+    summary:
+      "Redesign governance so it compounds velocity instead of taxing it. Built inside CBO, NCM, and CIPS-grade environments.",
+    parameters: ["Decision rights", "Escalation ladders", "Audit-as-signal", "Cadence design"],
+    impact: "$80M procurement portfolio managed with zero compliance breaches.",
+    leadMagnet: "Governance as Accelerator Playbook",
+    downloadUrl: "/frameworks/governance-as-accelerator/lead",
+  },
+  {
+    slug: "market-volatility-navigation",
+    number: 7,
+    title: "Market Volatility Navigation",
+    eyebrow: "GCC Strategy",
+    summary:
+      "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
+    parameters: ["Signal stack", "Reversibility calculus", "Hedged commitments", "Cadence review"],
+    impact: "6 GCC markets navigated; cross-border authority built in 24 months.",
+    leadMagnet: "Volatility Navigation Scorecard",
+    downloadUrl: "/frameworks/market-volatility-navigation/lead",
+  },
+  {
+    slug: "crisis-as-audit",
+    number: 8,
+    title: "Crisis as Audit",
+    eyebrow: "Resilience",
+    summary: "Treat every crisis as a diagnostic of what the pre-crisis system was hiding.",
+    parameters: [
+      "Crisis timeline",
+      "Latent defects",
+      "Ownership map",
+      "Corrective operating rhythm",
+    ],
+    impact: "60–85% organisational resilience improvement across crisis scenarios.",
+    leadMagnet: "Crisis-as-Audit Debrief Template",
+    downloadUrl: "/frameworks/crisis-as-audit/lead",
+  },
+  {
+    slug: "exile-resilience",
+    number: 2,
+    title: "Exile Resilience Framework",
+    eyebrow: "Resilience & Crisis Leadership",
+    summary:
+      "How leaders forge continuity when the ground itself is being pulled out from under them.",
+    parameters: [
+      "Displacement audit",
+      "Identity anchors",
+      "Continuity contracts",
+      "Return architecture",
+    ],
     impact: "60% faster crisis response across validated engagements.",
     leadMagnet: "Exile Resilience Framework (PDF)",
   },
@@ -369,7 +522,8 @@ export const FRAMEWORKS: Framework[] = [
     number: 7,
     title: "Market Volatility Navigation",
     eyebrow: "GCC Strategy",
-    summary: "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
+    summary:
+      "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
     parameters: ["Signal stack", "Reversibility calculus", "Hedged commitments", "Cadence review"],
     impact: "6 GCC markets navigated; cross-border authority built in 24 months.",
     leadMagnet: "Volatility Navigation Scorecard",
@@ -380,7 +534,12 @@ export const FRAMEWORKS: Framework[] = [
     title: "Crisis as Audit",
     eyebrow: "Resilience",
     summary: "Treat every crisis as a diagnostic of what the pre-crisis system was hiding.",
-    parameters: ["Crisis timeline", "Latent defects", "Ownership map", "Corrective operating rhythm"],
+    parameters: [
+      "Crisis timeline",
+      "Latent defects",
+      "Ownership map",
+      "Corrective operating rhythm",
+    ],
     impact: "60–85% organisational resilience improvement across crisis scenarios.",
     leadMagnet: "Crisis-as-Audit Debrief Template",
   },
@@ -394,6 +553,7 @@ export const FRAMEWORKS: Framework[] = [
     parameters: ["Foundation", "Structure", "Alignment", "Optimization", "Transformation"],
     impact: "90–95% adoption in field deployments vs. 25% industry standard.",
     leadMagnet: "The Pyramid Framework Guide",
+    downloadUrl: "/frameworks/pyramid-framework/lead",
   },
   {
     slug: "function-reframing",
@@ -404,16 +564,19 @@ export const FRAMEWORKS: Framework[] = [
     parameters: ["Mandate audit", "Value re-anchor", "Interface redesign", "Metric swap"],
     impact: "Removes the invisible ceiling on functional performance.",
     leadMagnet: "Function Reframing Worksheet",
+    downloadUrl: "/frameworks/function-reframing/lead",
   },
   {
     slug: "cross-cultural-authority",
     number: 11,
     title: "Cross-Cultural Authority",
     eyebrow: "GCC Strategy",
-    summary: "Build authority that reads legitimate across four or more cultural registers simultaneously.",
+    summary:
+      "Build authority that reads legitimate across four or more cultural registers simultaneously.",
     parameters: ["Register mapping", "Legitimacy debts", "Translation debt", "Public commitments"],
     impact: "24-month cross-border authority build in six GCC markets.",
     leadMagnet: "Cross-Cultural Authority Guide",
+    downloadUrl: "/frameworks/cross-cultural-authority/lead",
   },
   {
     slug: "super-labor",
@@ -421,9 +584,15 @@ export const FRAMEWORKS: Framework[] = [
     title: "Super-Labor Framework",
     eyebrow: "Operating Redesign",
     summary: "Restructure subcontracted and blended labour without collapsing delivery.",
-    parameters: ["Skill bundling", "Compliance envelope", "Retention economics", "Escalation paths"],
+    parameters: [
+      "Skill bundling",
+      "Compliance envelope",
+      "Retention economics",
+      "Escalation paths",
+    ],
     impact: "75% reduction in subcontractor penalties, Oman deployment.",
     leadMagnet: "Super-Labor Design Kit",
+    downloadUrl: "/frameworks/super-labor/lead",
   },
   {
     slug: "digital-nation-building",
@@ -432,19 +601,27 @@ export const FRAMEWORKS: Framework[] = [
     eyebrow: "Public Sector",
     summary:
       "Design and stand up national-scale digital platforms with governance that survives political cycles.",
-    parameters: ["Citizen surface", "Sovereign stack", "Institutional patronage", "Continuity guarantees"],
+    parameters: [
+      "Citizen surface",
+      "Sovereign stack",
+      "Institutional patronage",
+      "Continuity guarantees",
+    ],
     impact: "5M+ citizens served through national platform work.",
     leadMagnet: "Digital Nation Building Brief",
+    downloadUrl: "/frameworks/digital-nation-building/lead",
   },
   {
     slug: "ai-governance-integration",
     number: 14,
     title: "AI Governance Integration",
     eyebrow: "AI & Governance",
-    summary: "Integrate AI capability into regulated environments without breaking the compliance envelope.",
+    summary:
+      "Integrate AI capability into regulated environments without breaking the compliance envelope.",
     parameters: ["Risk taxonomy", "Human-in-the-loop", "Auditable prompts", "Board reporting"],
     impact: "AI CERTs-certified integration path for GCC executives.",
     leadMagnet: "AI Governance Integration Checklist",
+    downloadUrl: "/frameworks/ai-governance-integration/lead",
   },
   {
     slug: "character-compass",
@@ -456,6 +633,7 @@ export const FRAMEWORKS: Framework[] = [
     parameters: ["Pioneering", "Assertive", "Altruistic", "Intellectually driven"],
     impact: "90% leadership sustainability improvement across engagements.",
     leadMagnet: "Character Compass Assessment",
+    downloadUrl: "/frameworks/character-compass/lead",
   },
   {
     slug: "practical-people-skills-development",
@@ -474,9 +652,9 @@ export const FRAMEWORKS: Framework[] = [
     ],
     impact: "A repeatable personal development cycle, not a one-off plan.",
     leadMagnet: "Practical People Skills Development Guide",
+    downloadUrl: "/frameworks/practical-people-skills-development/lead",
   },
 ];
-
 
 export type BookChapter = {
   number: number;
@@ -493,56 +671,134 @@ export const BOOK_PARTS = [
   { number: "III", title: "The GCC Odyssey", pillar: "Cross-Cultural Leadership & GCC Strategy" },
   { number: "IV", title: "Frameworks & Playbooks", pillar: "Transformation Methodologies" },
   { number: "V", title: "Building Movements", pillar: "Digital Nation Building & AI Governance" },
-  { number: "VI", title: "The Leader & The Self", pillar: "Executive Character & Leadership Sustainability" },
+  {
+    number: "VI",
+    title: "The Leader & The Self",
+    pillar: "Executive Character & Leadership Sustainability",
+  },
 ];
 
 export const BOOK_CHAPTERS: BookChapter[] = [
-  { number: 1, slug: "born-between-worlds", part: "I", title: "Born Between Worlds",
+  {
+    number: 1,
+    slug: "born-between-worlds",
+    part: "I",
+    title: "Born Between Worlds",
     lesson: "Identity is forged in the seam between cultures, not inside either one.",
-    relatedFramework: "identity-preservation" },
-  { number: 2, slug: "the-gulf-war-and-what-it-took", part: "I", title: "The Gulf War and What It Took",
+    relatedFramework: "identity-preservation",
+  },
+  {
+    number: 2,
+    slug: "the-gulf-war-and-what-it-took",
+    part: "I",
+    title: "The Gulf War and What It Took",
     lesson: "Exile teaches which resources are portable and which are illusions.",
-    relatedFramework: "exile-resilience" },
-  { number: 3, slug: "learning-to-rebuild", part: "I", title: "Learning to Rebuild",
+    relatedFramework: "exile-resilience",
+  },
+  {
+    number: 3,
+    slug: "learning-to-rebuild",
+    part: "I",
+    title: "Learning to Rebuild",
     lesson: "Reconstruction begins with what you refuse to lose.",
-    relatedFramework: "identity-preservation" },
-  { number: 4, slug: "entering-the-fortune-500", part: "II", title: "Entering the Fortune 500",
+    relatedFramework: "identity-preservation",
+  },
+  {
+    number: 4,
+    slug: "entering-the-fortune-500",
+    part: "II",
+    title: "Entering the Fortune 500",
     lesson: "Global systems reward the quiet operators, not the loud ones.",
-    relatedFramework: "governance-as-accelerator" },
-  { number: 5, slug: "procurement-as-power", part: "II", title: "Procurement as Power",
+    relatedFramework: "governance-as-accelerator",
+  },
+  {
+    number: 5,
+    slug: "procurement-as-power",
+    part: "II",
+    title: "Procurement as Power",
     lesson: "Whoever controls the contract controls the transformation.",
-    relatedFramework: "governance-as-accelerator" },
-  { number: 6, slug: "governance-lessons-in-glass-towers", part: "II", title: "Governance Lessons in Glass Towers",
+    relatedFramework: "governance-as-accelerator",
+  },
+  {
+    number: 6,
+    slug: "governance-lessons-in-glass-towers",
+    part: "II",
+    title: "Governance Lessons in Glass Towers",
     lesson: "Governance is either the accelerator or the tax. Choose deliberately.",
-    relatedFramework: "governance-as-accelerator" },
-  { number: 7, slug: "arriving-in-the-gulf", part: "III", title: "Arriving in the Gulf",
+    relatedFramework: "governance-as-accelerator",
+  },
+  {
+    number: 7,
+    slug: "arriving-in-the-gulf",
+    part: "III",
+    title: "Arriving in the Gulf",
     lesson: "Authority in the GCC is earned in registers most outsiders never see.",
-    relatedFramework: "cross-cultural-authority" },
-  { number: 8, slug: "the-oman-years", part: "III", title: "The Oman Years",
+    relatedFramework: "cross-cultural-authority",
+  },
+  {
+    number: 8,
+    slug: "the-oman-years",
+    part: "III",
+    title: "The Oman Years",
     lesson: "Patience is a strategic asset — measure it in years, not quarters.",
-    relatedFramework: "cultural-ecosystem-mapping" },
-  { number: 9, slug: "the-pyramid-a-framework-for-everything", part: "IV",
+    relatedFramework: "cultural-ecosystem-mapping",
+  },
+  {
+    number: 9,
+    slug: "the-pyramid-a-framework-for-everything",
+    part: "IV",
     title: "The Pyramid — A Framework for Everything",
     lesson: "Foundation before scale, always.",
-    relatedFramework: "pyramid-framework" },
-  { number: 10, slug: "the-8c-protocol", part: "IV", title: "The 8C Protocol",
+    relatedFramework: "pyramid-framework",
+  },
+  {
+    number: 10,
+    slug: "the-8c-protocol",
+    part: "IV",
+    title: "The 8C Protocol",
     lesson: "Clarity is a system, not a state.",
-    relatedFramework: "8c-crisis-to-clarity" },
-  { number: 11, slug: "constraint-as-catalyst", part: "IV", title: "Constraint as Catalyst",
+    relatedFramework: "8c-crisis-to-clarity",
+  },
+  {
+    number: 11,
+    slug: "constraint-as-catalyst",
+    part: "IV",
+    title: "Constraint as Catalyst",
     lesson: "Limits do the design work if you let them.",
-    relatedFramework: "constraint-based-innovation" },
-  { number: 12, slug: "digital-nation-building", part: "V", title: "Digital Nation Building",
+    relatedFramework: "constraint-based-innovation",
+  },
+  {
+    number: 12,
+    slug: "digital-nation-building",
+    part: "V",
+    title: "Digital Nation Building",
     lesson: "National-scale systems succeed on the durability of their governance, not their code.",
-    relatedFramework: "digital-nation-building" },
-  { number: 13, slug: "ai-and-the-governance-gap", part: "V", title: "AI and the Governance Gap",
+    relatedFramework: "digital-nation-building",
+  },
+  {
+    number: 13,
+    slug: "ai-and-the-governance-gap",
+    part: "V",
+    title: "AI and the Governance Gap",
     lesson: "AI amplifies whatever governance you already have — including the missing kind.",
-    relatedFramework: "ai-governance-integration" },
-  { number: 14, slug: "the-character-compass", part: "VI", title: "The Character Compass",
+    relatedFramework: "ai-governance-integration",
+  },
+  {
+    number: 14,
+    slug: "the-character-compass",
+    part: "VI",
+    title: "The Character Compass",
     lesson: "Sustainability at the top is a character discipline, not a wellness program.",
-    relatedFramework: "character-compass" },
-  { number: 15, slug: "from-exile-to-transformation", part: "VI", title: "From Exile to Transformation",
+    relatedFramework: "character-compass",
+  },
+  {
+    number: 15,
+    slug: "from-exile-to-transformation",
+    part: "VI",
+    title: "From Exile to Transformation",
     lesson: "The exit from exile is also the entry to a system worth building.",
-    relatedFramework: "8c-crisis-to-clarity" },
+    relatedFramework: "8c-crisis-to-clarity",
+  },
 ];
 
 export type ArticleSection = { heading: string; paragraphs: string[] };
@@ -893,10 +1149,20 @@ export const EXTERNAL_PUBLICATIONS: ExternalPublication[] = [
 ];
 
 export const NEWSLETTER_ISSUES = [
-  { number: 1, slug: "issue-01", title: "The Dispatch — Issue 01", date: "2025-11-01",
-    excerpt: "Why the human layer must be installed before the system layer." },
-  { number: 2, slug: "issue-02", title: "The Dispatch — Issue 02", date: "2025-12-01",
-    excerpt: "Governance as accelerator: the redesign that changes the tax rate on velocity." },
+  {
+    number: 1,
+    slug: "issue-01",
+    title: "The Dispatch — Issue 01",
+    date: "2025-11-01",
+    excerpt: "Why the human layer must be installed before the system layer.",
+  },
+  {
+    number: 2,
+    slug: "issue-02",
+    title: "The Dispatch — Issue 02",
+    date: "2025-12-01",
+    excerpt: "Governance as accelerator: the redesign that changes the tax rate on velocity.",
+  },
 ];
 
 export const SPEAKING = [
@@ -1031,10 +1297,7 @@ export const SuperJetDhofarVideo = {
   ratio: "9 / 16",
 };
 
-export const MEDIA_FILM = [
-  FILM_HERO,
-  SuperJetDhofarVideo,
-];
+export const MEDIA_FILM = [FILM_HERO, SuperJetDhofarVideo];
 
 /**
  * Delivered workshops and talks — the credibility ledger. Every entry is a
@@ -1085,7 +1348,6 @@ export const WORKSHOP_STATS = [
   { value: "12+", label: "Workshops & keynotes" },
   { value: "500+", label: "Founders and executives in the room" },
 ];
-
 
 export const PRESS_ITEMS = [
   {
