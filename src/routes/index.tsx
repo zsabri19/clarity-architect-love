@@ -27,14 +27,46 @@ import talkStage from "@/assets/talk-stage.jpg.asset.json";
 const HERO_OG = `https://${SITE.domain}${heroAsset.url}`;
 
 const EIGHT_C = [
-  { number: "C1", name: "Clarity", line: "One coherent frame the whole organisation can operate from." },
-  { number: "C2", name: "Conditions", line: "The preconditions that decide whether change can hold." },
-  { number: "C3", name: "Control", line: "Decision rights, escalation, and ownership that stop the drift." },
-  { number: "C4", name: "Capability", line: "The skill stack and support required to carry the mandate." },
-  { number: "C5", name: "Calibration", line: "Feedback loops that surface misalignment before it becomes cost." },
-  { number: "C6", name: "Correction", line: "The right to change course without losing operating rhythm." },
-  { number: "C7", name: "Continuity", line: "Governance that outlives the champion, sponsor, or crisis." },
-  { number: "C8", name: "Coaching", line: "The human infrastructure that keeps leaders whole through change." },
+  {
+    number: "C1",
+    name: "Clarity",
+    line: "One coherent frame the whole organisation can operate from.",
+  },
+  {
+    number: "C2",
+    name: "Conditions",
+    line: "The preconditions that decide whether change can hold.",
+  },
+  {
+    number: "C3",
+    name: "Control",
+    line: "Decision rights, escalation, and ownership that stop the drift.",
+  },
+  {
+    number: "C4",
+    name: "Capability",
+    line: "The skill stack and support required to carry the mandate.",
+  },
+  {
+    number: "C5",
+    name: "Calibration",
+    line: "Feedback loops that surface misalignment before it becomes cost.",
+  },
+  {
+    number: "C6",
+    name: "Correction",
+    line: "The right to change course without losing operating rhythm.",
+  },
+  {
+    number: "C7",
+    name: "Continuity",
+    line: "Governance that outlives the champion, sponsor, or crisis.",
+  },
+  {
+    number: "C8",
+    name: "Coaching",
+    line: "The human infrastructure that keeps leaders whole through change.",
+  },
 ];
 
 export const Route = createFileRoute("/")({
@@ -62,7 +94,10 @@ export const Route = createFileRoute("/")({
       },
       { name: "twitter:image", content: HERO_OG },
     ],
-    links: [{ rel: "canonical", href: canonicalUrl("/") }],
+    links: [
+      { rel: "preload", as: "image", href: heroAsset.url },
+      { rel: "canonical", href: canonicalUrl("/") },
+    ],
   }),
   component: HomePage,
 });
@@ -116,7 +151,9 @@ function HomePage() {
         {/* Enhanced Quote Strip for Better Visibility */}
         <section className="quote-strip-section" aria-labelledby="quotes-title">
           <div className="site-shell">
-            <h2 id="quotes-title" className="sr-only">Signature Clarity Philosophy</h2>
+            <h2 id="quotes-title" className="sr-only">
+              Signature Clarity Philosophy
+            </h2>
             <QuoteRotator interval={6000} />
           </div>
         </section>
@@ -176,8 +213,6 @@ function HomePage() {
           </a>
         </div>
       </section>
-
-
 
       {/* @section: homepage-premise */}
       <section id="premise" className="premise-section">
@@ -239,7 +274,11 @@ function HomePage() {
 
           <div className="method-visual-grid">
             <figure className="method-image">
-              <img src={frameworkCompass.url} alt="The 8C Crisis-to-Clarity Framework diagram" loading="lazy" />
+              <img
+                src={frameworkCompass.url}
+                alt="The 8C Crisis-to-Clarity Framework diagram"
+                loading="lazy"
+              />
               <figcaption>The 8C sequence — ClarityOS internal operating model.</figcaption>
             </figure>
             <div className="method-note">
@@ -349,9 +388,7 @@ function HomePage() {
                 to="/frameworks/$slug"
                 params={{ slug: f.slug }}
               >
-                <span className="framework-index">
-                  {String(f.number).padStart(2, "0")}
-                </span>
+                <span className="framework-index">{String(f.number).padStart(2, "0")}</span>
                 <h3>{f.title}</h3>
                 <p>{f.summary}</p>
                 <span className="framework-bridge">{f.eyebrow}</span>
@@ -426,9 +463,7 @@ function HomePage() {
               <p className="eyebrow">Choose by consequence, not package size</p>
             </div>
             <div>
-              <h2 id="services-title">
-                From a focused decision to institutional transformation.
-              </h2>
+              <h2 id="services-title">From a focused decision to institutional transformation.</h2>
               <p>
                 Three clear entry points keep the commercial path legible without flattening every
                 need into the same offer.
