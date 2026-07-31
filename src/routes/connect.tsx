@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { SITE, canonicalUrl, GA_EVENTS } from "@/lib/site-data";
+import { trackEvent } from "@/routes/__root";
 import portraitAsset from "@/assets/portrait-3.jpg.asset.json";
 
 export const Route = createFileRoute("/connect")({
@@ -26,7 +27,6 @@ function ConnectPage() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <SiteLayout>
-      
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8">
         <div className="lg:col-span-8">
           <Eyebrow>Connect</Eyebrow>
@@ -38,8 +38,12 @@ function ConnectPage() {
             hours; tailored proposal within 5 business days.
           </p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-navy/60">
-            <a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a>
-            <a href={SITE.bookSessionUrl} className="hover:text-gold">Or book the $79 Session →</a>
+            <a href={`mailto:${SITE.email}`} className="hover:text-gold">
+              {SITE.email}
+            </a>
+            <a href={SITE.bookSessionUrl} className="hover:text-gold">
+              Or book the $79 Session →
+            </a>
           </div>
         </div>
         <div className="mt-12 lg:col-span-4 lg:mt-0">
@@ -60,8 +64,12 @@ function ConnectPage() {
             <div className="border border-green-500 bg-white p-10 text-center">
               <h2 className="font-serif text-3xl text-navy">Submitted!</h2>
               <p className="mt-4 text-navy/70">
-                Thank you for your enquiry. We'll be in touch within 48 hours. For time-sensitive matters, email{" "}
-                <a href={`mailto:${SITE.email}`} className="text-gold">{SITE.email}</a>.
+                Thank you for your enquiry. We'll be in touch within 48 hours. For time-sensitive
+                matters, email{" "}
+                <a href={`mailto:${SITE.email}`} className="text-gold">
+                  {SITE.email}
+                </a>
+                .
               </p>
             </div>
           ) : (
@@ -77,12 +85,13 @@ function ConnectPage() {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
-                      "Accept": "application/json",
+                      Accept: "application/json",
                     },
                     body: JSON.stringify(data),
                   });
 
                   if (response.ok) {
+                    trackEvent(GA_EVENTS.ENTERPRISE_ENQUIRY_START);
                     setSubmitted(true);
                   } else {
                     console.error("Form submission failed");

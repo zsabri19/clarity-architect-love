@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { BOOK_PARTS, BOOK_CHAPTERS, SITE, canonicalUrl } from "@/lib/site-data";
+import { BOOK_PARTS, BOOK_CHAPTERS, SITE, canonicalUrl, GA_EVENTS } from "@/lib/site-data";
+import { trackEvent } from "@/routes/__root";
 import {
   BOOK_ABOUT,
   BOOK_PROLOGUE,
@@ -86,36 +87,40 @@ function BookPage() {
               From the Gulf War to Fortune 500 boardrooms, from Muscat to Dubai, this is the record
               of what it took to build a system that holds under real pressure.
             </p>
-            <form onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const formData = new FormData(form);
-              const data = Object.fromEntries(formData);
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
 
-              try {
-                const response = await fetch("https://formspree.io/f/mjgndylo", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                  },
-                  body: JSON.stringify(data),
-                });
+                try {
+                  const response = await fetch("https://formspree.io/f/mjgndylo", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    body: JSON.stringify(data),
+                  });
 
-                if (response.ok) {
-                  const result = await response.json();
-                  // Show success message - could update state here
-                  alert("Thank you for joining the waitlist!");
-                  form.reset();
-                } else {
-                  console.error("Form submission failed");
-                  alert("Submission failed. Please try again.");
+                  if (response.ok) {
+                    trackEvent(GA_EVENTS.WAITLIST_JOIN);
+                    const result = await response.json();
+                    // Show success message - could update state here
+                    alert("Thank you for joining the waitlist!");
+                    form.reset();
+                  } else {
+                    console.error("Form submission failed");
+                    alert("Submission failed. Please try again.");
+                  }
+                } catch (error) {
+                  console.error("Error submitting form:", error);
+                  alert("Error submitting form. Please try again.");
                 }
-              } catch (error) {
-                console.error("Error submitting form:", error);
-                alert("Error submitting form. Please try again.");
-              }
-            }} className="mt-8 space-y-3">
+              }}
+              className="mt-8 space-y-3"
+            >
               <label htmlFor="book-waitlist-email" className="sr-only">
                 Email address for the pre-order waitlist
               </label>
@@ -261,9 +266,7 @@ function BookPage() {
         <div className="mt-12 grid gap-px border border-navy/10 bg-navy/10 md:grid-cols-2 lg:grid-cols-4">
           {BOOK_ROADMAP.map((r, i) => (
             <div key={r.phase} className="bg-white p-8">
-              <div className="font-serif text-3xl text-gold">
-                {String(i + 1).padStart(2, "0")}
-              </div>
+              <div className="font-serif text-3xl text-gold">{String(i + 1).padStart(2, "0")}</div>
               <h3 className="mt-4 font-serif text-2xl text-navy">{r.phase}</h3>
               <p className="mt-3 text-xs font-medium uppercase tracking-widest text-navy/50">
                 {r.frameworks}
@@ -345,7 +348,6 @@ function BookPage() {
           </a>
         </div>
       </section>
-
 
       <section className="border-t border-navy/10 bg-paper-soft py-20">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">

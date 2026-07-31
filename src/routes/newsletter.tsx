@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { NEWSLETTER_ISSUES, canonicalUrl } from "@/lib/site-data";
+import { NEWSLETTER_ISSUES, canonicalUrl, GA_EVENTS } from "@/lib/site-data";
+import { trackEvent } from "@/routes/__root";
 import portraitAsset from "@/assets/portrait-6.jpg.asset.json";
 
 export const Route = createFileRoute("/newsletter")({
@@ -46,12 +47,13 @@ function NewsletterPage() {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json",
+                    Accept: "application/json",
                   },
                   body: JSON.stringify(data),
                 });
 
                 if (response.ok) {
+                  trackEvent(GA_EVENTS.NEWSLETTER_SUBSCRIBE);
                   alert("Thank you for subscribing!");
                   form.reset();
                 } else {

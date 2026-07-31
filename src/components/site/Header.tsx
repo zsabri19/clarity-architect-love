@@ -1,7 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV, SITE } from "@/lib/site-data";
+import { NAV, SITE, GA_EVENTS } from "@/lib/site-data";
+import { trackEvent } from "@/routes/__root";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -44,7 +45,12 @@ export function Header() {
             ))}
           </nav>
 
-          <a className="header-cta" href={SITE.bookSessionUrl}>
+          <a
+            className="header-cta"
+            href={SITE.bookSessionUrl}
+            data-page="homepage"
+            onClick={() => trackEvent(GA_EVENTS.BOOK_SESSION_CLICK)}
+          >
             Book a $79 Session
           </a>
 

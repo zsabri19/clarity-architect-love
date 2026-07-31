@@ -125,6 +125,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+export function trackEvent(name: string, params?: Record<string, unknown>) {
+  if (typeof window !== "undefined" && (window as Record<string, unknown>).gtag) {
+    (window as Record<string, unknown>).gtag("event", name, params);
+  }
+}
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
