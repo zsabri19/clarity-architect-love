@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportWebVitals } from "../lib/performance";
 
 function NotFoundComponent() {
   return (
@@ -90,6 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap",
       },
+      // font-display: swap verified — Google Fonts CSS2 URL includes &display=swap,
+      // ensuring text remains visible while custom fonts load (prevents FOIT).
     ],
     scripts: [
       {
@@ -141,6 +144,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => {
+    reportWebVitals();
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
