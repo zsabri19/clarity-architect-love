@@ -344,6 +344,7 @@ export type Framework = {
   impact: string;
   leadMagnet: string;
   downloadUrl: string;
+  relatedServiceSlug?: "clarity-session" | "enterprise-90-day" | "board-advisory";
 };
 
 export const FRAMEWORKS: Framework[] = [
@@ -367,6 +368,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "Reduces decision drag; installs a shared operating rhythm.",
     leadMagnet: "8C Crisis-to-Clarity Field Guide (PDF)",
     downloadUrl: "/frameworks/8c-crisis-to-clarity/lead",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "exile-resilience",
@@ -384,6 +386,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "60% faster crisis response across validated engagements.",
     leadMagnet: "Exile Resilience Framework (PDF)",
     downloadUrl: "/frameworks/exile-resilience/lead",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "cultural-ecosystem-mapping",
@@ -396,6 +399,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "70% improved cross-cultural project success.",
     leadMagnet: "Cultural Ecosystem Mapping Canvas",
     downloadUrl: "/frameworks/cultural-ecosystem-mapping/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "identity-preservation",
@@ -407,6 +411,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "Prevents organisational identity collapse during transformation.",
     leadMagnet: "Identity Preservation Checklist",
     downloadUrl: "/frameworks/identity-preservation/lead",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "constraint-based-innovation",
@@ -418,6 +423,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "80% innovation output enhanced under constraint conditions.",
     leadMagnet: "Constraint-Based Innovation Playbook",
     downloadUrl: "/frameworks/constraint-based-innovation/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "governance-as-accelerator",
@@ -430,6 +436,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "$80M procurement portfolio managed with zero compliance breaches.",
     leadMagnet: "Governance as Accelerator Playbook",
     downloadUrl: "/frameworks/governance-as-accelerator/lead",
+    relatedServiceSlug: "board-advisory",
   },
   {
     slug: "market-volatility-navigation",
@@ -442,6 +449,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "6 GCC markets navigated; cross-border authority built in 24 months.",
     leadMagnet: "Volatility Navigation Scorecard",
     downloadUrl: "/frameworks/market-volatility-navigation/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "crisis-as-audit",
@@ -458,90 +466,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "60–85% organisational resilience improvement across crisis scenarios.",
     leadMagnet: "Crisis-as-Audit Debrief Template",
     downloadUrl: "/frameworks/crisis-as-audit/lead",
-  },
-  {
-    slug: "exile-resilience",
-    number: 2,
-    title: "Exile Resilience Framework",
-    eyebrow: "Resilience & Crisis Leadership",
-    summary:
-      "How leaders forge continuity when the ground itself is being pulled out from under them.",
-    parameters: [
-      "Displacement audit",
-      "Identity anchors",
-      "Continuity contracts",
-      "Return architecture",
-    ],
-    impact: "60% faster crisis response across validated engagements.",
-    leadMagnet: "Exile Resilience Framework (PDF)",
-  },
-  {
-    slug: "cultural-ecosystem-mapping",
-    number: 3,
-    title: "Cultural Ecosystem Mapping",
-    eyebrow: "Cross-Cultural Leadership",
-    summary:
-      "Diagnose the invisible cultural operating system beneath a GCC organisation before designing change.",
-    parameters: ["Power topology", "Language codes", "Trust flows", "Silent constraints"],
-    impact: "70% improved cross-cultural project success.",
-    leadMagnet: "Cultural Ecosystem Mapping Canvas",
-  },
-  {
-    slug: "identity-preservation",
-    number: 4,
-    title: "Identity Preservation Under Change",
-    eyebrow: "Leadership Sustainability",
-    summary: "Keep the core intact while everything on the surface is being rebuilt.",
-    parameters: ["Non-negotiables", "Ritual continuity", "Narrative custody", "Successor logic"],
-    impact: "Prevents organisational identity collapse during transformation.",
-    leadMagnet: "Identity Preservation Checklist",
-  },
-  {
-    slug: "constraint-based-innovation",
-    number: 5,
-    title: "Constraint-Based Innovation",
-    eyebrow: "Transformation Methodology",
-    summary: "Use scarcity, sanctions, and structural limits as design fuel rather than blockers.",
-    parameters: ["Constraint inventory", "Design pivots", "Substitution mapping", "Yield metrics"],
-    impact: "80% innovation output enhanced under constraint conditions.",
-    leadMagnet: "Constraint-Based Innovation Playbook",
-  },
-  {
-    slug: "governance-as-accelerator",
-    number: 6,
-    title: "Governance as Accelerator",
-    eyebrow: "Governance & Procurement",
-    summary:
-      "Redesign governance so it compounds velocity instead of taxing it. Built inside CBO, NCM, and CIPS-grade environments.",
-    parameters: ["Decision rights", "Escalation ladders", "Audit-as-signal", "Cadence design"],
-    impact: "$80M procurement portfolio managed with zero compliance breaches.",
-    leadMagnet: "Governance as Accelerator Playbook",
-  },
-  {
-    slug: "market-volatility-navigation",
-    number: 7,
-    title: "Market Volatility Navigation",
-    eyebrow: "GCC Strategy",
-    summary:
-      "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
-    parameters: ["Signal stack", "Reversibility calculus", "Hedged commitments", "Cadence review"],
-    impact: "6 GCC markets navigated; cross-border authority built in 24 months.",
-    leadMagnet: "Volatility Navigation Scorecard",
-  },
-  {
-    slug: "crisis-as-audit",
-    number: 8,
-    title: "Crisis as Audit",
-    eyebrow: "Resilience",
-    summary: "Treat every crisis as a diagnostic of what the pre-crisis system was hiding.",
-    parameters: [
-      "Crisis timeline",
-      "Latent defects",
-      "Ownership map",
-      "Corrective operating rhythm",
-    ],
-    impact: "60–85% organisational resilience improvement across crisis scenarios.",
-    leadMagnet: "Crisis-as-Audit Debrief Template",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "pyramid-framework",
@@ -554,6 +479,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "90–95% adoption in field deployments vs. 25% industry standard.",
     leadMagnet: "The Pyramid Framework Guide",
     downloadUrl: "/frameworks/pyramid-framework/lead",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "function-reframing",
@@ -565,6 +491,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "Removes the invisible ceiling on functional performance.",
     leadMagnet: "Function Reframing Worksheet",
     downloadUrl: "/frameworks/function-reframing/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "cross-cultural-authority",
@@ -577,6 +504,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "24-month cross-border authority build in six GCC markets.",
     leadMagnet: "Cross-Cultural Authority Guide",
     downloadUrl: "/frameworks/cross-cultural-authority/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "super-labor",
@@ -593,6 +521,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "75% reduction in subcontractor penalties, Oman deployment.",
     leadMagnet: "Super-Labor Design Kit",
     downloadUrl: "/frameworks/super-labor/lead",
+    relatedServiceSlug: "enterprise-90-day",
   },
   {
     slug: "digital-nation-building",
@@ -610,6 +539,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "5M+ citizens served through national platform work.",
     leadMagnet: "Digital Nation Building Brief",
     downloadUrl: "/frameworks/digital-nation-building/lead",
+    relatedServiceSlug: "board-advisory",
   },
   {
     slug: "ai-governance-integration",
@@ -622,6 +552,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "AI CERTs-certified integration path for GCC executives.",
     leadMagnet: "AI Governance Integration Checklist",
     downloadUrl: "/frameworks/ai-governance-integration/lead",
+    relatedServiceSlug: "board-advisory",
   },
   {
     slug: "character-compass",
@@ -634,6 +565,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "90% leadership sustainability improvement across engagements.",
     leadMagnet: "Character Compass Assessment",
     downloadUrl: "/frameworks/character-compass/lead",
+    relatedServiceSlug: "clarity-session",
   },
   {
     slug: "practical-people-skills-development",
@@ -653,6 +585,7 @@ export const FRAMEWORKS: Framework[] = [
     impact: "A repeatable personal development cycle, not a one-off plan.",
     leadMagnet: "Practical People Skills Development Guide",
     downloadUrl: "/frameworks/practical-people-skills-development/lead",
+    relatedServiceSlug: "clarity-session",
   },
 ];
 
