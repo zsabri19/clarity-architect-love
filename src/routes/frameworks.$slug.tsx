@@ -56,9 +56,13 @@ function FrameworkPage() {
     <SiteLayout>
       <article className="mx-auto max-w-4xl px-6 pt-20 pb-16 lg:px-8">
         <nav className="mb-6 text-[11px] font-medium uppercase tracking-widest text-navy/50">
-          <Link to="/frameworks" className="hover:text-gold">The Library</Link>
+          <Link to="/frameworks" className="hover:text-gold">
+            The Library
+          </Link>
           <span className="mx-2">/</span>
-          <span>Framework {String(f.number).padStart(2, "0")} / {FRAMEWORKS.length}</span>
+          <span>
+            Framework {String(f.number).padStart(2, "0")} / {FRAMEWORKS.length}
+          </span>
         </nav>
         <Eyebrow>{f.eyebrow}</Eyebrow>
         <h1 className="font-serif text-4xl leading-tight text-navy md:text-6xl">{f.title}</h1>
@@ -165,13 +169,15 @@ function FrameworkPage() {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json",
+                    Accept: "application/json",
                   },
-                  body: JSON.stringify({ ...data, framework: f.slug, frameworkNumber: f.number, }),  // Track which framework was requested
+                  body: JSON.stringify({ ...data, framework: f.slug, frameworkNumber: f.number }), // Track which framework was requested
                 });
 
                 if (response.ok) {
-                  alert(`Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available for download.`);
+                  alert(
+                    `Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available for download.`,
+                  );
                   form.reset();
                 } else {
                   console.error("Form submission failed");
@@ -241,20 +247,77 @@ function FrameworkPage() {
           </div>
         )}
 
-        <div className="mt-16 grid gap-4 border-t border-navy/10 pt-8 md:grid-cols-2">
-          <a
-            href={SITE.bookSessionUrl}
-            className="bg-navy px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
-          >
-            Book $79 Clarity Session
-          </a>
-          <Link
-            to="/services"
-            className="border border-navy/20 px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:border-navy"
-          >
-            Enterprise Engagement
-          </Link>
-        </div>
+        {(() => {
+          const serviceCtaConfig: Record<
+            string,
+            {
+              primaryHref: string;
+              primaryLabel: string;
+              secondaryHref: string;
+              secondaryLabel: string;
+            }
+          > = {
+            "clarity-session": {
+              primaryHref: "/book-a-session",
+              primaryLabel: "Book the $79 Session",
+              secondaryHref: "/connect",
+              secondaryLabel: "Start Enterprise Enquiry",
+            },
+            "enterprise-90-day": {
+              primaryHref: "/connect",
+              primaryLabel: "Start Enterprise Enquiry",
+              secondaryHref: "/book-a-session",
+              secondaryLabel: "Book the $79 Session",
+            },
+            "board-advisory": {
+              primaryHref: "/connect",
+              primaryLabel: "Request a Proposal",
+              secondaryHref: "/book-a-session",
+              secondaryLabel: "Book the $79 Session",
+            },
+          };
+
+          const cta = serviceCtaConfig[f.relatedServiceSlug ?? "clarity-session"];
+
+          return (
+            <section className="mt-24 bg-navy py-16 text-paper">
+              <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+                <p className="text-[10px] font-medium uppercase tracking-widest text-gold">
+                  Next step
+                </p>
+                <h2 className="mt-2 font-serif text-3xl md:text-4xl">
+                  Turn {f.title} into operating reality
+                </h2>
+                <div className="mt-8 flex flex-col gap-4 md:flex-row md:justify-center">
+                  {cta.primaryHref.startsWith("http") ? (
+                    <a
+                      href={cta.primaryHref}
+                      className="bg-gold px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
+                    >
+                      {cta.primaryLabel}
+                    </a>
+                  ) : (
+                    <Link
+                      to={cta.primaryHref}
+                      className="bg-gold px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
+                    >
+                      {cta.primaryLabel}
+                    </Link>
+                  )}
+                  <Link
+                    to={cta.secondaryHref}
+                    className="border border-paper/20 px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:border-paper hover:bg-paper hover:text-navy"
+                  >
+                    {cta.secondaryLabel}
+                  </Link>
+                </div>
+                <p className="mt-6 text-sm text-paper/60">
+                  Every engagement starts with a clarity diagnosis.
+                </p>
+              </div>
+            </section>
+          );
+        })()}
       </article>
     </SiteLayout>
   );
