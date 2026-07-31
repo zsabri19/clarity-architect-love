@@ -47,14 +47,16 @@ function ChapterPage() {
     <SiteLayout>
       <article className="mx-auto max-w-3xl px-6 pt-20 pb-24 lg:px-8">
         <nav className="text-[11px] font-medium uppercase tracking-widest text-navy/50">
-          <Link to="/book" className="hover:text-gold">The Memoir</Link>
+          <Link to="/book" className="hover:text-gold">
+            The Memoir
+          </Link>
           <span className="mx-2">/</span>
-          <span>Part {chapter.part} · {part?.title}</span>
+          <span>
+            Part {chapter.part} · {part?.title}
+          </span>
         </nav>
         <Eyebrow>Chapter {String(chapter.number).padStart(2, "0")}</Eyebrow>
-        <h1 className="font-serif text-4xl leading-tight text-navy md:text-6xl">
-          {chapter.title}
-        </h1>
+        <h1 className="font-serif text-4xl leading-tight text-navy md:text-6xl">{chapter.title}</h1>
         <p className="mt-8 font-serif text-2xl italic leading-relaxed text-navy/80">
           {chapter.lesson}
         </p>
@@ -105,6 +107,39 @@ function ChapterPage() {
             All Chapters
           </Link>
         </div>
+
+        {framework && (
+          <div className="mt-16 border-l-2 border-gold bg-paper-soft p-8">
+            <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
+              Framework Mapping
+            </div>
+            <p className="mt-3 text-navy/80">
+              This chapter maps to the{" "}
+              <span className="font-semibold text-navy">{framework.title}</span>.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/frameworks/$slug"
+                params={{ slug: framework.slug }}
+                className="bg-navy px-6 py-3 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+              >
+                Read the framework
+              </Link>
+              <Link
+                to="/book-a-session"
+                className="border border-navy/20 px-6 py-3 text-center text-xs font-bold uppercase tracking-widest hover:border-navy"
+              >
+                Book a $79 Session
+              </Link>
+            </div>
+            <Link
+              to="/newsletter"
+              className="mt-4 inline-block text-xs font-medium uppercase tracking-widest text-navy hover:text-gold"
+            >
+              Join The Clarity Dispatch →
+            </Link>
+          </div>
+        )}
       </article>
     </SiteLayout>
   );

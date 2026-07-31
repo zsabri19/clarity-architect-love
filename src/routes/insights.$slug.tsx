@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl } from "@/lib/site-data";
+import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl, type Framework } from "@/lib/site-data";
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
@@ -13,7 +13,8 @@ export const Route = createFileRoute("/insights/$slug")({
     const SUFFIX = " — Insights";
     const MAX = 60;
     const base = raw.split(":")[0].trim() || raw;
-    const pick = (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
+    const pick =
+      (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
     const title = loaderData ? `${pick}${SUFFIX}` : "Insight";
     const desc = loaderData?.article.summary ?? "An insight from Zeeshan Sabri.";
 
@@ -59,11 +60,25 @@ function ArticlePage() {
     ? FRAMEWORKS.find((f) => f.slug === article.relatedFramework)
     : null;
 
+  const relatedFrameworks = article.relatedFramework
+    ? ARTICLES.filter(
+        (a) => a.slug !== article.slug && a.relatedFramework === article.relatedFramework,
+      )
+        .map((a) => FRAMEWORKS.find((f) => f.slug === a.relatedFramework))
+        .filter((f): f is Framework => Boolean(f))
+    : [];
+
+  const relatedFrameworksList = Array.from(
+    new Map(relatedFrameworks.map((f) => [f.slug, f])).values(),
+  ).slice(0, 2);
+
   return (
     <SiteLayout>
       <article className="mx-auto max-w-3xl px-6 pt-20 pb-24 lg:px-8">
         <nav className="mb-4 text-[11px] font-medium uppercase tracking-widest text-navy/50">
-          <Link to="/insights" className="hover:text-gold">Insights</Link>
+          <Link to="/insights" className="hover:text-gold">
+            Insights
+          </Link>
           <span className="mx-2">/</span>
           <span>{article.category}</span>
         </nav>
@@ -75,24 +90,31 @@ function ArticlePage() {
             year: "numeric",
           })}
         </Eyebrow>
-        <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">
-          {article.title}
-        </h1>
+        <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">{article.title}</h1>
         <p className="mt-8 text-xl leading-relaxed text-navy/70">{article.summary}</p>
 
         <div className="mt-12 space-y-10 text-lg leading-relaxed text-navy/80">
-          {article.sections.map((section: { heading: string; paragraphs: string[] }, idx: number) => (
-            <section key={section.heading}>
-              <h2 className="font-serif text-2xl text-navy md:text-3xl">{section.heading}</h2>
-              <div className="mt-4 space-y-4">
-                {section.paragraphs.map((p: string, pIdx: number) => (
-                  <p key={pIdx} className={idx === 0 && pIdx === 0 ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:leading-none first-letter:text-gold" : undefined}>
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
+          {article.sections.map(
+            (section: { heading: string; paragraphs: string[] }, idx: number) => (
+              <section key={section.heading}>
+                <h2 className="font-serif text-2xl text-navy md:text-3xl">{section.heading}</h2>
+                <div className="mt-4 space-y-4">
+                  {section.paragraphs.map((p: string, pIdx: number) => (
+                    <p
+                      key={pIdx}
+                      className={
+                        idx === 0 && pIdx === 0
+                          ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:leading-none first-letter:text-gold"
+                          : undefined
+                      }
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </section>
+            ),
+          )}
         </div>
 
         {framework && (
@@ -112,18 +134,40 @@ function ArticlePage() {
           </div>
         )}
 
+        {relatedFrameworksList.length > 0 && (
+          <div className="mt-16 border-l-2 border-gold bg-paper-soft p-8">
+            <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
+              Related Frameworks
+            </div>
+            <div className="mt-4 space-y-6">
+              {relatedFrameworksList.map((f) => (
+                <div key={f.slug}>
+                  <Link
+                    to="/frameworks/$slug"
+                    params={{ slug: f.slug }}
+                    className="font-serif text-xl text-navy hover:text-gold"
+                  >
+                    {f.title}
+                  </Link>
+                  <p className="mt-2 text-sm text-navy/70">{f.summary}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mt-16 grid gap-4 border-t border-navy/10 pt-8 md:grid-cols-2">
-          <a
-            href={SITE.bookSessionUrl}
+          <Link
+            to="/book-a-session"
             className="bg-navy px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
           >
-            Book $79 Clarity Session
-          </a>
+            Book a $79 Session
+          </Link>
           <Link
-            to="/insights"
+            to="/connect"
             className="border border-navy/20 px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:border-navy"
           >
-            More Insights
+            Start Enterprise Enquiry
           </Link>
         </div>
       </article>
