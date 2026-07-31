@@ -56,9 +56,13 @@ function FrameworkPage() {
     <SiteLayout>
       <article className="mx-auto max-w-4xl px-6 pt-20 pb-16 lg:px-8">
         <nav className="mb-6 text-[11px] font-medium uppercase tracking-widest text-navy/50">
-          <Link to="/frameworks" className="hover:text-gold">The Library</Link>
+          <Link to="/frameworks" className="hover:text-gold">
+            The Library
+          </Link>
           <span className="mx-2">/</span>
-          <span>Framework {String(f.number).padStart(2, "0")} / {FRAMEWORKS.length}</span>
+          <span>
+            Framework {String(f.number).padStart(2, "0")} / {FRAMEWORKS.length}
+          </span>
         </nav>
         <Eyebrow>{f.eyebrow}</Eyebrow>
         <h1 className="font-serif text-4xl leading-tight text-navy md:text-6xl">{f.title}</h1>
@@ -84,6 +88,15 @@ function FrameworkPage() {
             </div>
             <p className="mt-4 font-serif text-2xl italic leading-relaxed text-navy">{f.impact}</p>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <a
+            href={f.downloadUrl}
+            className="inline-block bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
+          >
+            Download the {f.leadMagnet}
+          </a>
         </div>
 
         {enrichment && (
@@ -165,13 +178,15 @@ function FrameworkPage() {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json",
+                    Accept: "application/json",
                   },
-                  body: JSON.stringify({ ...data, framework: f.slug, frameworkNumber: f.number, }),  // Track which framework was requested
+                  body: JSON.stringify({ ...data, framework: f.slug, frameworkNumber: f.number }), // Track which framework was requested
                 });
 
                 if (response.ok) {
-                  alert(`Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available for download.`);
+                  alert(
+                    `Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available for download.`,
+                  );
                   form.reset();
                 } else {
                   console.error("Form submission failed");
