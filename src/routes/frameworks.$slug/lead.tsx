@@ -10,17 +10,19 @@ export const Route = createFileRoute("/frameworks/$slug/lead")({
     return { framework };
   },
   head: ({ loaderData }) => {
-    const f = loaderData.framework;
-    const title = `Download ${f.leadMagnet} — ${f.title}`;
+    const f = loaderData?.framework;
+    const leadMagnet = f?.leadMagnet ?? "Lead Magnet";
+    const title = f ? `Download ${leadMagnet} — ${f.title}` : "ClarityOS Framework";
+    const slug = f?.slug ?? "";
     return {
       meta: [
         { title },
-        { name: "description", content: f.leadMagnet },
+        { name: "description", content: leadMagnet },
         { property: "og:title", content: title },
-        { property: "og:description", content: f.leadMagnet },
-        { property: "og:url", content: canonicalUrl(`/frameworks/${f.slug}/lead`) },
+        { property: "og:description", content: leadMagnet },
+        { property: "og:url", content: canonicalUrl(`/frameworks/${slug}/lead`) },
       ],
-      links: [{ rel: "canonical", href: canonicalUrl(`/frameworks/${f.slug}/lead`) }],
+      links: [{ rel: "canonical", href: canonicalUrl(`/frameworks/${slug}/lead`) }],
     };
   },
   component: LeadDownloadPage,
