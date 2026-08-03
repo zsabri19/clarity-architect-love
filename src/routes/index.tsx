@@ -12,11 +12,13 @@ import {
   SERVICES,
   ARTICLES,
   BOOK_PARTS,
+  CERT_AICERTS_PDF,
   canonicalUrl,
 } from "@/lib/site-data";
 import { FILM_HERO, WORKSHOP_LEDGER, WORKSHOP_STATS } from "@/lib/site-data";
 import { WorkshopMarquee } from "@/components/site/WorkshopMarquee";
 import { VideoPanel } from "@/components/site/VideoPanel";
+import { DownloadButton } from "@/components/site/DownloadButton";
 import { BOOK_ROADMAP } from "@/lib/v4-content";
 import heroAsset from "@/assets/hero.jpg.asset.json";
 import originAsset from "@/assets/origin.jpg.asset.json";
@@ -313,6 +315,16 @@ function HomePage() {
             <LogoMarquee logos={LOGOS_INSTITUTIONS} label="Institutions engaged" speed={38} />
             <p className="mt-8">Ventures and programmes built or advised:</p>
             <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={52} />
+          </div>
+          <div className="mt-12 flex flex-wrap gap-4">
+            <DownloadButton
+              href={CERT_AICERTS_PDF}
+              filename="aicerts-certified-trainer.pdf"
+              label="Download Credential (PDF)"
+              eventName="download"
+              eventParams={{ credential: "AI CERTs Certified Trainer" }}
+              className="button button-primary"
+            />
           </div>
         </div>
       </section>
