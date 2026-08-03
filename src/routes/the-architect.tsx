@@ -2,7 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
-import { SITE, METRICS, LOGOS_INSTITUTIONS, LOGOS_VENTURES, RECOGNITION, FIELD_PHOTOS, TEAM_PHOTOS, CERT_AICERTS_PDF, CERTIFICATIONS, ARCHIVE_CRICKET, canonicalUrl } from "@/lib/site-data";
+import { DownloadButton } from "@/components/site/DownloadButton";
+import {
+  SITE,
+  METRICS,
+  LOGOS_INSTITUTIONS,
+  LOGOS_VENTURES,
+  RECOGNITION,
+  FIELD_PHOTOS,
+  TEAM_PHOTOS,
+  CERT_AICERTS_PDF,
+  CERTIFICATIONS,
+  ARCHIVE_CRICKET,
+  canonicalUrl,
+} from "@/lib/site-data";
 import originAsset from "@/assets/origin.jpg.asset.json";
 
 const OG = `https://${SITE.domain}${originAsset.url}`;
@@ -74,11 +87,13 @@ function ArchitectPage() {
 
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
         <Eyebrow>Recognition</Eyebrow>
-        <h2 className="font-serif text-3xl text-navy md:text-4xl">Founders 2.0 Award, Dubai 2025</h2>
+        <h2 className="font-serif text-3xl text-navy md:text-4xl">
+          Founders 2.0 Award, Dubai 2025
+        </h2>
         <p className="mt-6 text-navy/70">
           The Entrepreneurial Excellence Award recognised ClarityOS as the world's first
-          Pre-Governance Operating System, currently deployed across national-scale digital
-          banking, telecom, and defence procurement transformations serving 5 million+ users.
+          Pre-Governance Operating System, currently deployed across national-scale digital banking,
+          telecom, and defence procurement transformations serving 5 million+ users.
         </p>
         <blockquote className="mt-10 border-l-2 border-gold pl-6 font-serif text-2xl italic text-navy">
           "We are seeing a maturity shift in the GCC. Leaders are realising that you cannot install
@@ -103,14 +118,14 @@ function ArchitectPage() {
           </div>
 
           <div className="mt-4">
-            <a
+            <DownloadButton
               href={CERT_AICERTS_PDF}
-              target="_blank"
-              rel="noreferrer"
+              filename="aicerts-certified-trainer.pdf"
+              label="AI CERTs — Certified Trainer credential (PDF)"
+              eventName="download"
+              eventParams={{ credential: "AI CERTs Certified Trainer" }}
               className="text-[10px] font-medium uppercase tracking-widest text-navy/60 hover:text-gold"
-            >
-              AI CERTs — Certified Trainer credential (PDF) →
-            </a>
+            />
           </div>
           <div className="mt-12">
             <Eyebrow>Ventures, platforms, ecosystem</Eyebrow>
@@ -118,7 +133,6 @@ function ArchitectPage() {
           <div className="mt-6">
             <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={52} />
           </div>
-
         </div>
       </section>
 
@@ -166,15 +180,14 @@ function ArchitectPage() {
       </section>
 
       <section className="border-t border-navy/10 bg-white py-24">
-
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Eyebrow>Origin — Kuwait Cricket, 1999–2000</Eyebrow>
           <SectionTitle className="mb-4">Discipline under pressure, on the record</SectionTitle>
           <p className="max-w-3xl text-navy/70">
             Before the Fortune 500 years and the GCC transformation portfolios, there was an opening
-            batsman on the Kuwait national U-17 and U-19 squads. The habit of holding the first
-            over — reading conditions, absorbing pressure, protecting the innings — is the same
-            habit ClarityOS installs in leadership teams two decades later.
+            batsman on the Kuwait national U-17 and U-19 squads. The habit of holding the first over
+            — reading conditions, absorbing pressure, protecting the innings — is the same habit
+            ClarityOS installs in leadership teams two decades later.
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {ARCHIVE_CRICKET.map((a) => (
@@ -207,7 +220,12 @@ function ArchitectPage() {
             {RECOGNITION.map((r) => (
               <figure key={r.title} className="flex flex-col border border-navy/10 bg-white">
                 <div className="aspect-[4/3] overflow-hidden bg-navy/5">
-                  <img src={r.src} alt={r.title} loading="lazy" className="h-full w-full object-cover" />
+                  <img
+                    src={r.src}
+                    alt={r.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <figcaption className="p-6">
                   <div className="font-serif text-lg text-navy">{r.title}</div>
@@ -237,7 +255,12 @@ function ArchitectPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {TEAM_PHOTOS.map((p) => (
               <figure key={p.src} className="overflow-hidden border border-navy/10 bg-white">
-                <img src={p.src} alt={p.caption} loading="lazy" className="aspect-[16/10] w-full object-cover" />
+                <img
+                  src={p.src}
+                  alt={p.caption}
+                  loading="lazy"
+                  className="aspect-[16/10] w-full object-cover"
+                />
                 <figcaption className="p-4 text-sm text-navy/60">{p.caption}</figcaption>
               </figure>
             ))}

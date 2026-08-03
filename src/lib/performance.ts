@@ -1,18 +1,12 @@
 import { onCLS, onINP, onLCP, onTTFB, type Metric } from "web-vitals";
-
-declare global {
-  interface Window {
-    gtag: (command: "event", eventName: string, params: Record<string, unknown>) => void;
-  }
-}
+import { trackEvent } from "./analytics";
 
 function sendToGA4(metric: Metric) {
   if (typeof window === "undefined") return;
-  if (typeof window.gtag !== "function") return;
 
   const { name, id, delta } = metric;
 
-  window.gtag("event", name, {
+  trackEvent(name, {
     event_category: "Web Vitals",
     event_label: id,
     value: Math.round(delta),
